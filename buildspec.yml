@@ -4,9 +4,9 @@ phases:
   build:
     commands:
       - echo "Running security scan"
-      - mkdir -p website
-      - echo "<h1>My Deployed Site</h1>" > website/index.html
-      - mkdir -p reports
+      - mkdir website
+      - echo "<h1>My Working Site</h1>" > website/index.html
+      - mkdir reports
       - echo "No vulnerabilities found" > reports/security-report.txt
 
 artifacts:
