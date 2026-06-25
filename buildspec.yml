@@ -8,6 +8,6 @@ phases:
       - echo "No vulnerabilities found" > reports/security-report.txt
 
 artifacts:
+  base-directory: website
   files:
-    - index.html
-    - reports/**/*
+    - "**/*"
