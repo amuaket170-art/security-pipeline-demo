@@ -3,14 +3,13 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Running security scan"
-      - mkdir website
-      - echo "<h1>My Working Site</h1>" > website/index.html
-      - mkdir reports
-      - echo "No vulnerabilities found" > reports/security-report.txt
+      - echo "Creating website files"
+      - mkdir -p output
+      - echo "<h1>Pipeline Working 🎉</h1>" > output/index.html
+      - mkdir -p output/reports
+      - echo "No vulnerabilities found" > output/reports/security-report.txt
 
 artifacts:
+  base-directory: output
   files:
-    - website/index.html
-    - reports/**/*
-  discard-paths: yes
+    - "**/*"
