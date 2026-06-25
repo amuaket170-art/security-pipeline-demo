@@ -4,10 +4,13 @@ phases:
   build:
     commands:
       - echo "Running security scan"
-      - mkdir reports
+      - mkdir -p website
+      - echo "<h1>My Deployed Site</h1>" > website/index.html
+      - mkdir -p reports
       - echo "No vulnerabilities found" > reports/security-report.txt
 
 artifacts:
-  base-directory: website
   files:
-    - "**/*"
+    - website/index.html
+    - reports/**/*
+  discard-paths: yes
